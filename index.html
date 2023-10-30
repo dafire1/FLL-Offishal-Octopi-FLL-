@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FISHY Scanner</title>
+    <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="logo" href="">
+<style>   
+    canvas {
+        display: none;
+    }
+
+    .hello {
+        padding: 10px;
+        font-family: Vollkorn;
+        text-align: center;
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+
+    } 
+</style>
+</head>
+<body>   
+    <h1>Welcome to FISHY SCANNER</h1>
+    <h4>Instructions:<br> Take a picture of your Fish<br>
+        Go to Fishy Recognizer
+    </h>
+    <div></div>
+    <a download onClick="takeAPicture()" class="hello">SNAP(Picture)</a>
+    <video id="webcam" autoplay playsinlne width="800" height="600"></video>
+    <canvas id="canvas"></canvas>
+    <h1>Identifying.....</h1>
+    <h4>Identified: Go to:</h4>
+    <a href="https://files.ontario.ca/environment-and-energy/fishing/198234.pdf" target="_blank" class="sui">Fishy Recognizer</a>
+
+
+<script>
+    const webcamElement = document.getElementById("webcam");
+    const canvasElement = document.getElementById("canvas");
+    const webcam = new Webcam(webcamElement, "user", canvasElement);
+    webcam.start();
+    
+    function takeAPicture() {
+        let picture = webcam.snap();
+        document.querySelector("a").href = picture;
+    }
+</script>
