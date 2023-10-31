@@ -31,7 +31,11 @@ h4 {
 }
 
 footer{
+    font-family: Vollkorn;
     text-align: center;
-    color: black;
-    padding: 40px;
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
 }
